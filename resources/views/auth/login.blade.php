@@ -44,23 +44,22 @@
           <form id="formAuthentication" class="mb-3"  action="{{ route('login') }}" method="POST">
             @csrf
             <div class="mb-3">
-              <label for="email" class="form-label">Email or Username</label>
+              <label for="email" class="form-label">Email</label>
               <input
                 type="text"
-                class="form-control"
-                id="email"
+                class="form-control  bg-gray-200 focus:bg-white @error('email') border-red-500 @enderror"
                 name="email"
-                value="{{ old('email') }}"
-                placeholder="Enter your email or username"
-                autofocus />
+                 value="{{ old('email') }}"
+                placeholder="Enter your email"
+                
+                />
             </div>
             @error('email')
-                <div class="inline-flex max-w-sm w-full bg-red-200 shadow-sm rounded-md overflow-hidden mt-2">
-                    <div class="px-4 py-2">
-                        <p class="text-gray-600 text-sm">{{ $message }}</p>
-                    </div>
-                </div>
-             @enderror
+            <div class="mt-1">
+                    <p class="text-danger text-sm">{{ $message }}</p>
+        
+            </div>
+            @enderror
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">
                 <label class="form-label" for="password">Password</label>
@@ -72,17 +71,16 @@
                 <input
                   type="password"
                   id="password"
-                  class="form-control"
+                  class="form-control  @error('password') border-red-500 @enderror"
                   name="password"
                   placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                   aria-describedby="password" />
-                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                <span class="input-group-text cursor-pointer  @error('password') border-red-500 @enderror"><i class="bx bx-hide  @error('password') text-danger @enderror"></i></span>
               </div>
               @error('password')
-              <div class="inline-flex max-w-sm w-full bg-red-200 shadow-sm rounded-md overflow-hidden mt-2">
-                  <div class="px-4 py-2">
-                      <p class="text-gray-600 text-sm">{{ $message }}</p>
-                  </div>
+              <div class="mt-1">
+                      <p class="text-danger text-sm">{{ $message }}</p>
+          
               </div>
               @enderror
             </div>
