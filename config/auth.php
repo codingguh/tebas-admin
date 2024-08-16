@@ -40,6 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'api' => [
+            'driver' => 'passport',        // <-- set ke "passport"
+            'provider' => 'donaturs',        // <-- set ke "donaturs"
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -60,14 +66,16 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
-        ],
-
+        Illuminate\Filesystem\FilesystemServiceProvider::class,
         // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
+        //     'driver' => 'eloquent',
+        //     // 'model' => App\Models\User::class,
+        //     'model' => env('AUTH_MODEL', App\Models\User::class),
+        // ],
+
+        // 'donaturs' => [
+        //     'driver' => 'eloquent',
+        //     'model' => env('AUTH_MODEL', App\Models\Donatur::class),	
         // ],
     ],
 

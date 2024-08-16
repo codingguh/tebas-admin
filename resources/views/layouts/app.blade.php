@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/typeahead-js/typeahead.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/libs/@form-validation/form-validation.css')}}" />
 
     <!-- Page CSS -->
 
@@ -106,102 +107,34 @@
                 
                     </li>
 
-                    <!-- Layouts -->
-                    <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-layout"></i>
-                            <div class="text-truncate" data-i18n="Layouts">Layouts</div>
-                        </a>
 
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('layouts-collapsed-menu.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Collapsed menu">Collapsed menu</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('layouts-content-navbar.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Content navbar">Content navbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('layouts-content-navbar-with-sidebar.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Content nav + Sidebar">Content nav + Sidebar
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('../horizontal-menu-template') }}" class="menu-link"
-                                    target="_blank">
-                                    <div class="text-truncate" data-i18n="Horizontal">Horizontal</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('layouts-without-menu.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Without menu">Without menu</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('layouts-without-navbar.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Without navbar">Without navbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('layouts-fluid.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Fluid">Fluid</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('layouts-container.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Container">Container</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('layouts-blank.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Blank">Blank</div>
-                                </a>
-                            </li>
-                        </ul>
+                     <!-- Icons -->
+                     <li class="menu-item {{ Request::is('admin/donatur*') ? ' active' :  '' }}">
+                        <a href="{{ route('admin.donatur.index') }}"class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-crown"></i>
+                            <div class="text-truncate" data-i18n="Donaturs">Donaturs</div>
+                        </a>
                     </li>
 
-                    <!-- Front Pages -->
-                    <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-store"></i>
-                            <div class="text-truncate" data-i18n="Front Pages">Front Pages</div>
+                    <li class="menu-item {{ Request::is('admin/donation*') ? ' active' :  '' }}">
+                        <a href="{{ route('admin.donation.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-calendar"></i>
+                            <div class="text-truncate" data-i18n="Donation">Donation</div>
                         </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('../front-pages/landing-page.html') }}" class="menu-link"
-                                    target="_blank">
-                                    <div class="text-truncate" data-i18n="Landing">Landing</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('../front-pages/pricing-page.html') }}" class="menu-link"
-                                    target="_blank">
-                                    <div class="text-truncate" data-i18n="Pricing">Pricing</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('../front-pages/payment-page.html') }}" class="menu-link"
-                                    target="_blank">
-                                    <div class="text-truncate" data-i18n="Payment">Payment</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('../front-pages/checkout-page.html') }}" class="menu-link"
-                                    target="_blank">
-                                    <div class="text-truncate" data-i18n="Checkout">Checkout</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('../front-pages/help-center-landing.html') }}" class="menu-link"
-                                    target="_blank">
-                                    <div class="text-truncate" data-i18n="Help Center">Help Center</div>
-                                </a>
-                            </li>
-                        </ul>
+                    </li>
+
+                    <li class="menu-item {{ Request::is('admin/profile*') ? ' active' :  '' }}">
+                        <a href="{{ route('admin.profile.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-user"></i>
+                            <div class="text-truncate" data-i18n="Proile Saya">Profile Saya</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item {{ Request::is('admin/slider*') ? ' active' :  '' }}">
+                        <a href="{{ route('admin.slider.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-carousel"></i>
+                            <div class="text-truncate" data-i18n="Sliders">Sliders</div>
+                        </a>
                     </li>
 
                     <!-- Apps & Pages -->
@@ -220,12 +153,7 @@
                             <div class="text-truncate" data-i18n="Chat">Chat</div>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="{{ url('app-calendar.html') }}" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-calendar"></i>
-                            <div class="text-truncate" data-i18n="Calendar">Calendar</div>
-                        </a>
-                    </li>
+                
                     <li class="menu-item">
                         <a href="{{ url('app-kanban.html') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-grid"></i>
@@ -387,232 +315,7 @@
                     <!-- e-commerce-app menu end -->
                     <!-- Academy menu start -->
                 
-                    <!-- Academy menu end -->
-                    <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-car"></i>
-                            <div class="text-truncate" data-i18n="Logistics">Logistics</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('app-logistics-dashboard.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Dashboard">Dashboard</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('app-logistics-fleet.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Fleet">Fleet</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-food-menu"></i>
-                            <div class="text-truncate" data-i18n="Invoice">Invoice</div>
-                            <span class="badge badge-center rounded-pill bg-success ms-auto">4</span>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('app-invoice-list.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="List">List</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('app-invoice-preview.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Preview">Preview</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('app-invoice-edit.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Edit">Edit</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('app-invoice-add.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Add">Add</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-user"></i>
-                            <div class="text-truncate" data-i18n="Users">Users</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('app-user-list.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="List">List</div>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <div class="text-truncate" data-i18n="View">View</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ url('app-user-view-account.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Account">Account</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('app-user-view-security.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Security">Security</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('app-user-view-billing.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Billing & Plans">Billing & Plans
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('app-user-view-notifications.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Notifications">Notifications</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('app-user-view-connections.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Connections">Connections</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-check-shield"></i>
-                            <div class="text-truncate" data-i18n="Roles & Permissions">Roles & Permissions</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('app-access-roles.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Roles">Roles</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('app-access-permission.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Permission">Permission</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div class="text-truncate" data-i18n="Pages">Pages</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <div class="text-truncate" data-i18n="User Profile">User Profile</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-profile-user.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Profile">Profile</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-profile-teams.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Teams">Teams</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-profile-projects.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Projects">Projects</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-profile-connections.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Connections">Connections</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <div class="text-truncate" data-i18n="Account Settings">Account Settings</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-account-settings-account.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Account">Account</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-account-settings-security.html') }}"
-                                            class="menu-link">
-                                            <div class="text-truncate" data-i18n="Security">Security</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-account-settings-billing.html') }}" class="menu-link">
-                                            <div class="text-truncate" data-i18n="Billing & Plans">Billing & Plans
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-account-settings-notifications.html') }}"
-                                            class="menu-link">
-                                            <div class="text-truncate" data-i18n="Notifications">Notifications</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-account-settings-connections.html') }}"
-                                            class="menu-link">
-                                            <div class="text-truncate" data-i18n="Connections">Connections</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('pages-faq.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="FAQ">FAQ</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('pages-pricing.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Pricing">Pricing</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <div class="text-truncate" data-i18n="Misc">Misc</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-misc-error.html') }}" class="menu-link"
-                                            target="_blank">
-                                            <div class="text-truncate" data-i18n="Error">Error</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-misc-under-maintenance.html') }}" class="menu-link"
-                                            target="_blank">
-                                            <div class="text-truncate" data-i18n="Under Maintenance">Under Maintenance
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-misc-comingsoon.html') }}" class="menu-link"
-                                            target="_blank">
-                                            <div class="text-truncate" data-i18n="Coming Soon">Coming Soon</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('pages-misc-not-authorized.html') }}" class="menu-link"
-                                            target="_blank">
-                                            <div class="text-truncate" data-i18n="Not Authorized">Not Authorized</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                   
                     <li class="menu-item">
                         <a href="#" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
@@ -1004,88 +707,16 @@
                         </ul>
                     </li>
 
-                    <!-- Icons -->
-                    <li class="menu-item">
-                        <a href="{{ url('javascript:void(0)') }}" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-crown"></i>
-                            <div class="text-truncate" data-i18n="Icons">Icons</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('icons-boxicons.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Boxicons">Boxicons</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('icons-font-awesome.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Fontawesome">Fontawesome</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
                     <!-- Forms & Tables -->
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text" data-i18n="Forms & Tables">Forms &amp; Tables</span>
                     </li>
                     <!-- Forms -->
                     <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
+                        <a href="#" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-detail"></i>
                             <div class="text-truncate" data-i18n="Form Elements">Form Elements</div>
                         </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('forms-basic-inputs.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Basic Inputs">Basic Inputs</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-input-groups.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Input groups">Input groups</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-custom-options.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Custom Options">Custom Options</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-editors.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Editors">Editors</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-file-upload.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="File Upload">File Upload</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-pickers.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Pickers">Pickers</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-selects.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Select & Tags">Select &amp; Tags</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-sliders.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Sliders">Sliders</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-switches.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Switches">Switches</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('forms-extras.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Extras">Extras</div>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="menu-item">
                         <a href="#" class="menu-link menu-toggle">
@@ -1110,24 +741,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-carousel"></i>
-                            <div class="text-truncate" data-i18n="Form Wizard">Form Wizard</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ url('form-wizard-numbered.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Numbered">Numbered</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ url('form-wizard-icons.html') }}" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Icons">Icons</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                     <li class="menu-item">
                         <a href="{{ url('form-validation.html') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-list-check"></i>
@@ -1822,7 +1436,9 @@
     <script src="{{ asset('assets/vendor/libs/i18n/i18n.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/typeahead-js/typeahead.js') }}"></script>
     <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
-
+    <script src="{{asset('assets/vendor/libs/@form-validation/popular.js')}}"></script>
+    <script src="{{asset('assets/vendor/libs/@form-validation/bootstrap5.js')}}"></script>
+    <script src="{{asset('assets/vendor/libs/@form-validation/auto-focus.js')}}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->

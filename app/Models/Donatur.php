@@ -6,10 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Laravel\Passport\HasApiTokens;
+use Illuminate\Foundation\Auth\User as Authenticatable;	// <-- import Auth Laravel
 
-class Donatur extends Model
+class Donatur extends Authenticatable	// <-- set ke Authenticatable
+
 {
-    use HasFactory;
+    use HasFactory,HasApiTokens;
 
      /**
      * fillable
@@ -20,15 +23,26 @@ class Donatur extends Model
         'name', 'email', 'password', 'avatar'
     ];
 
-      /**
-     * donations
-     *
-     * @return void
-     */
-    public function donations()
-    {
-        return $this->hasMany(Donation::class);
-    }
+    /**
+    * hidden
+    *
+    * @var array
+    */
+   protected $hidden = [
+       'password',
+       'remember_token',
+   ];
+
+   /**
+    * donations
+    *
+    * @return void
+    */
+   public function donations()
+   {
+       return $this->hasMany(Donation::class);
+   }
+
 
      /**
      * avatar
